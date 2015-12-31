@@ -1,0 +1,6 @@
+project goals:
+
+web service connection to cellavision images:
+directly off cellavision or remote drive. 
+
+data access layer 

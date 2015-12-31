@@ -1,0 +1,44 @@
+Traceback errors:
+
+###########################################################################################################
+[Tag: Broadcast input array]
+
+Traceback (most recent call last):
+  File "cnn.py", line 453, in <module>
+    plac.call(main)
+  File "/home/thomas/miniconda2/envs/py27/lib/python2.7/site-packages/plac_core.py", line 309, in call
+    cmd, result = parser_from(obj).consume(arglist)
+  File "/home/thomas/miniconda2/envs/py27/lib/python2.7/site-packages/plac_core.py", line 195, in consume
+    return cmd, self.func(*(args + varargs + extraopts), **kwargs)
+  File "cnn.py", line 449, in main
+    train(output_layer, samplers, num_epochs, basename)
+  File "cnn.py", line 396, in train
+    dataset = load_data(i, samplers)
+  File "cnn.py", line 119, in load_data
+    X_train, y_train = samplers['train'](epoch_label, BATCH_SIZE * 128)
+  File "cnn.py", line 111, in sample
+    X[i] = patch(images[idx[i]], rng=rng)
+ValueError: could not broadcast input array from shape (3,3,0) into shape (3,50,50)
+
+###########################################################################################################
+
+[Tag: String to Float: Normal]
+
+Traceback (most recent call last):
+  File "cnn.py", line 457, in <module>
+    plac.call(main)
+  File "/home/thomas/miniconda2/envs/py27/lib/python2.7/site-packages/plac_core.py", line 309, in call
+    cmd, result = parser_from(obj).consume(arglist)
+  File "/home/thomas/miniconda2/envs/py27/lib/python2.7/site-packages/plac_core.py", line 195, in consume
+    return cmd, self.func(*(args + varargs + extraopts), **kwargs)
+  File "cnn.py", line 453, in main
+    train(output_layer, samplers, num_epochs, basename)
+  File "cnn.py", line 400, in train
+    dataset = load_data(i, samplers)
+  File "cnn.py", line 123, in load_data
+    X_train, y_train = samplers['train'](epoch_label, BATCH_SIZE * 128)
+  File "cnn.py", line 116, in sample
+    Y[i] = labels[idx[i]]
+ValueError: could not convert string to float: Normal
+
+###########################################################################################################
